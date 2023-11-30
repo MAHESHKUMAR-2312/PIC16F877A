@@ -1,0 +1,19 @@
+#include<xc.h>
+#define _XTAL_FREQ 20000000  //20 MHz clock
+
+void main()
+{
+	TRISC = 0XBD;	// 1011 1101 - RC6_RC1 = OUTPUT
+	PORTC = 0X00;	//Clearing garbage values
+	while(1)
+	{
+	PORTC = 0x40;	//10 patern	0100 0000
+	__delay_ms(3000);
+	PORTC = 0x00;	//00 patern	0000 0000
+	__delay_ms(3000);
+	PORTC = 0x02;	//01 patern	0000 0010
+	__delay_ms(3000);
+	PORTC = 0x42;	//11 patern  0100 0010 - RC6_RC1
+	__delay_ms(3000);
+	}
+}

@@ -1,0 +1,15 @@
+#include <xc.h>	
+#define _XTAL_FREQ 20000000	//Maximum clock frequency(20Mhz)
+void main()	//main function
+{
+	TRISC=0xFB;	//1111 1011//Port C register (pin 2)
+	//RC.3 is output(0)..Other pins in portC declared as input
+	PORTC=0X00;	//Clear garbage value
+	while(1)	//while loop(1=always true condition)
+	{
+	PORTC=0X04;	//0x04 = 0000 0100
+	__delay_ms(1000);	//1 Second delay(inbuilt)
+	PORTC=0X00;	//clear bits
+	__delay_ms(1000);
+	}
+}

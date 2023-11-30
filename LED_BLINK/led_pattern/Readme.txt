@@ -5,4 +5,6 @@ LED's are blink based on the pattern on every 3 second.
 10
 00
 01
-100
+11
+
+Proteus file attached. 
